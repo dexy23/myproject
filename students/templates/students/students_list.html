@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="uk">
   
@@ -10,7 +11,7 @@
 	  <!-- Include Styles-->
 	  <link rel="stylesheet" 
 	        href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-	  <link rel="stylesheet" type="text/css" href="css/main.css">      
+	  <link rel="stylesheet" type="text/css" href="/static/css/main.css">      
 
 	  
   
@@ -81,79 +82,27 @@
     					</tr>
     				</thead>
     				<tbody>
+                      {% for student in students %}
     					<tr>
-    						<td>1</td>
-    						<td><img class="img-circle" height="30" width="30" src="./img/me.jpg"></td>
-    						<td><a href="{% url "students_edit" 1 %}">Феданяк</a></td>
-    						<td><a href="{% url "students_edit" 1 %}">Роман</a></td>
-    						<td>274</td>
+    						<td>{{ forloop.counter }}</td>
+    						<td><img class="img-circle" src="{% static student.image %}" height="30" width="30" /></td>
+    						<td><a href="{% url "students_edit" student.id %}">{{ student.last_name }}</td>
+    						<td><a href="{% url "students_edit" student.id %}">{{ student.first_name }}</td>
+    						<td>{{ student.ticket }}</td>
     						<td>
     							<div class="btn-group">
     								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Дія
     									<span class="caret"></span>
     								</button>
     								<ul class="dropdown-menu" role="menu">
-    									<li><a href="/journal/1">Відвідування</a></li>
-    									<li><a href="{% url "students_edit" 1 %}">Редагувати</a></li>
-    									<li><a href="{% url "students_delete" 1 %}">Видалити</a></li>
+    									<li><a href="/journal/{{ student.id }}">Відвідування</a></li>
+    									<li><a href="{% url "students_edit" student.id %}">Редагувати</a></li>
+    									<li><a href="{% url "students_delete" student.id %}">Видалити</a></li>
     								</ul>
     							</div>
     						</td>
     					</tr>
-    				</tbody>
-    				<tbody>
-    					<tr>
-    						<td>2</td>
-    						<td><img class="img-circle" height="30" width="30" src="./img/2.jpg"></td>
-    						<td><a title="Редагувати" href="#">Василишин</a></td>
-    						<td><a title="Редагувати" href="#">Андрій</a></td>
-    						<td>345</td>
-    						<td>
-    							<div class="dropdown">
-    								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Дія
-    									<span class="caret"></span>
-    								</button>
-    								<ul class="dropdown-menu" role="menu">
-    									<li role="presentation">
-    										<a role="menuitem" tabindex="-1" href="#">Відвідування</a>
-    									</li>
-    									<li role="presentation">
-    										<a role="menuitem" tabindex"-1" href="#">Редагувати</a>
-    									</li>
-    									<li role="presentation">
-    										<a role="menuitem" tabindex="-1" href="#">Видалити</a>
-    									</li>
-    								</ul>
-    							</div>
-    						</td>
-    					</tr>
-    				</tbody>
-    				<tbody>
-    					<tr>
-    						<td>3</td>
-    						<td><img class="img-circle" height="30" width="30" src="./img/3.gif"></td>
-    						<td><a title="Редагувати" href="#">Харитон</a></td>
-    						<td><a title="Редагувати" href="#">Олег</a></td>
-    						<td>376</td>
-    						<td>
-    							<div class="dropdown">
-    								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Дія
-    									<span class="caret"></span>
-    								</button>
-    								<ul class="dropdown-menu" role="menu">
-    									<li role="presentation">
-    										<a role="menuitem" tabindex="-1" href="#">Відвідування</a>
-    									</li>
-    									<li role="presentation">
-    										<a role="menuitem" tabindex"-1" href="#">Редагувати</a>
-    									</li>
-    									<li role="presentation">
-    										<a role="menuitem" tabindex="-1" href="#">Видалити</a>
-    									</li>
-    								</ul>
-    							</div>
-    						</td>
-    					</tr>
+                        {% endfor %}
     				</tbody>
     			</table>
     			<nav>
