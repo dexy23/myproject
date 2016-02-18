@@ -41,5 +41,11 @@ urlpatterns = patterns('',
          'students.views.groups.groups_delete',
          name='groups_delete'),
 
+    # Visiting urls
+    url(r'^visiting/$', 'students.views.visiting.visiting_list', name='visiting'),
+    url(r'^visiting/(?P<vid>\d+)/edit/$',
+    	 'students.views.visiting.visiting_edit',
+    	 name='visiting_edit'),
+
     url(r'^admin/', include(admin.site.urls)),
 )
