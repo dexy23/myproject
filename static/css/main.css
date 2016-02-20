@@ -28,3 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 	color: #555555;
 }
 
+caption {
+	text-align: center;
+	font-weight: bold;
+	color: black;
+}

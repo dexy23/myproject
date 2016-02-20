@@ -1,0 +1,154 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+{% block content %}
+
+{% block extra_css %} <link rel="stylesheet" type="text/css" href="{{ PORTAL_URL }}{% static "css/main2.css" %}">{% endblock extra_css %}
+				<!-- Start Students Calendar -->
+				<table class="table table-bordered">
+					<caption>&larr; Лютий 2016 &rarr;</caption>
+					<thead>
+						<tr>
+							<th>№</th>
+							<th>Студент</th>
+							<th>Пн<br/>1</th>
+							<th>Вт<br/>2</th>
+							<th>Ср<br/>3</th>
+							<th>Чт<br/>4</th>
+							<th>Пт<br/>5</th>
+							<th>Сб<br/>6</th>
+							<th>Нд<br/>7</th>
+							<th>Пн<br/>8</th>
+							<th>Вт<br/>9</th>
+							<th>Ср<br/>10</th>
+							<th>Чт<br/>11</th>
+							<th>Пт<br/>12</th>
+							<th>Сб<br/>13</th>
+							<th>Нд<br/>14</th>
+							<th>Пн<br/>15</th>
+							<th>Вт<br/>16</th>
+							<th>Ср<br/>17</th>
+							<th>Чт<br/>18</th>
+							<th>Пт<br/>19</th>
+							<th>Сб<br/>20</th>
+							<th>Нд<br/>21</th>
+							<th>Пн<br/>22</th>
+							<th>Вт<br/>23</th>
+							<th>Ср<br/>24</th>
+							<th>Чт<br/>25</th>
+							<th>Пт<br/>26</th>
+							<th>Сб<br/>27</th>
+							<th>Нд<br/>28</th>
+							<th>Пн<br/>29</th>
+						</tr>
+					</thead>
+					<tbody>
+					  {% for journ in journal %}
+						<tr>
+							<td>{{ forloop.counter }}</td>
+							<td><a href="{% url "students_edit" journ.id %}">{{ journ.name }}</a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							<td><a href="#"><label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox" value="option">
+							</label></a></td>
+							
+						</tr>
+					</tbody>
+					
+					
+						{% endfor %}
+					
+				</table>
+			</div>
+		</div>
+		<!-- End Calendar -->
+
+{% endblock content %}
