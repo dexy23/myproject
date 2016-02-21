@@ -17,6 +17,6 @@ def journal_list(request):
 		)
 	return render(request, 'students/journal_list.html',
 		{'journal': journal})
-
+	
 def journal_edit(request, vid):
 	return HttpResponse('<h1>Edit Student %s</h1>' % vid)
